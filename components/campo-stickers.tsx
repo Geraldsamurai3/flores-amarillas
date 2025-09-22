@@ -4,20 +4,7 @@ import { useState, useEffect } from 'react';
 import GirasolSticker from './girasol-stickers';
 
 interface CampoStickersProps {
-           {/* Flores adicionales más pequeñas y dispersas */}
-          <div className="absolute inset-0">
-            <span className="absolute top-1/4 left-1/6 text-2xl animate-float text-yellow-400">*</span>
-            <span className="absolute top-1/2 right-1/6 text-xl animate-float-delayed text-pink-400">*</span>
-            <span className="absolute bottom-1/4 left-1/4 text-2xl animate-float text-red-400">*</span>
-            <span className="absolute top-3/4 right-1/3 text-lg animate-float text-purple-400">*</span>
-          </div>
-
-          {/* Algunos insectos volando */}
-          <div className="absolute inset-0">
-            <span className="absolute top-1/4 left-2/5 text-2xl animate-float text-blue-400">~</span>
-            <span className="absolute top-1/2 right-1/3 text-xl animate-float-delayed text-blue-400">~</span>
-            <span className="absolute top-2/3 left-3/5 text-lg animate-float text-yellow-600">•</span>
-          </div>?: (id: number) => void;
+  onFlowerClick?: (id: number) => void;
   clickedFlowers?: number[];
 }
 
@@ -99,7 +86,7 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
       <div className="absolute top-20 left-1/3 text-6xl md:text-7xl animate-float-delayed">☁️</div>
       <div className="absolute top-16 right-1/4 text-5xl md:text-6xl animate-float">☁️</div>
 
-      {/* Campo base con césped stickers mejorado */}
+      {/* Campo base con césped usando símbolos simples */}
       <div className="absolute inset-0 top-1/3">
         {/* Césped de fondo más natural */}
         <div className="w-full h-full bg-gradient-to-t from-green-500 via-green-400 to-green-300 relative">
@@ -107,14 +94,14 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
           {/* Horizonte más definido */}
           <div className="absolute top-0 w-full h-8 bg-gradient-to-b from-green-300 to-green-400"></div>
           
-          {/* Césped distribuido de forma más natural */}
+          {/* Césped usando símbolos simples */}
           <div className="absolute inset-0 overflow-hidden">
-            {/* Césped frontal (más denso y grande) */}
+            {/* Césped frontal */}
             <div className="absolute bottom-0 left-0 w-full h-1/3 flex flex-wrap items-end justify-around">
               {Array.from({length: 25}).map((_, i) => (
                 <span 
                   key={`grass-front-${i}`}
-                  className="text-4xl md:text-5xl opacity-90 animate-sway"
+                  className="text-green-600 text-4xl md:text-5xl opacity-90 animate-sway font-bold"
                   style={{ 
                     animationDelay: `${i * 0.1}s`,
                     transform: `translateY(${Math.random() * 10}px) rotate(${Math.random() * 20 - 10}deg)`
@@ -130,7 +117,7 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
               {Array.from({length: 20}).map((_, i) => (
                 <span 
                   key={`grass-mid-${i}`}
-                  className="text-2xl md:text-3xl opacity-80 animate-sway"
+                  className="text-green-500 text-2xl md:text-3xl opacity-80 animate-sway font-bold"
                   style={{ 
                     animationDelay: `${i * 0.15}s`,
                     transform: `rotate(${Math.random() * 15 - 7.5}deg)`
@@ -146,7 +133,7 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
               {Array.from({length: 12}).map((_, i) => (
                 <span 
                   key={`grass-back-${i}`}
-                  className="text-lg opacity-60 animate-sway"
+                  className="text-green-400 text-lg opacity-60 animate-sway font-bold"
                   style={{ 
                     animationDelay: `${i * 0.2}s`,
                     transform: `rotate(${Math.random() * 10 - 5}deg)`
@@ -158,19 +145,19 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
             </div>
           </div>
 
-          {/* Flores adicionales más pequeñas y dispersas */}
+          {/* Flores usando símbolos simples */}
           <div className="absolute inset-0">
-            <span className="absolute top-1/4 left-1/6 text-2xl animate-float">🌼</span>
-            <span className="absolute top-1/2 right-1/6 text-xl animate-float-delayed">🌸</span>
-            <span className="absolute bottom-1/4 left-1/4 text-2xl animate-float">🌷</span>
-            <span className="absolute top-3/4 right-1/3 text-lg animate-float">🌺</span>
+            <span className="absolute top-1/4 left-1/6 text-2xl animate-float text-yellow-400 font-bold">*</span>
+            <span className="absolute top-1/2 right-1/6 text-xl animate-float-delayed text-pink-400 font-bold">*</span>
+            <span className="absolute bottom-1/4 left-1/4 text-2xl animate-float text-red-400 font-bold">*</span>
+            <span className="absolute top-3/4 right-1/3 text-lg animate-float text-purple-400 font-bold">*</span>
           </div>
 
-          {/* Algunos insectos volando */}
+          {/* Insectos usando símbolos simples */}
           <div className="absolute inset-0">
-            <span className="absolute top-1/4 left-2/5 text-2xl animate-float">🦋</span>
-            <span className="absolute top-1/2 right-1/3 text-xl animate-float-delayed">🦋</span>
-            <span className="absolute top-2/3 left-3/5 text-lg animate-float">�</span>
+            <span className="absolute top-1/4 left-2/5 text-2xl animate-float text-blue-400 font-bold">~</span>
+            <span className="absolute top-1/2 right-1/3 text-xl animate-float-delayed text-blue-400 font-bold">~</span>
+            <span className="absolute top-2/3 left-3/5 text-lg animate-float text-yellow-600 font-bold">•</span>
           </div>
         </div>
       </div>
@@ -196,7 +183,7 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
         ))}
       </div>
 
-      {/* Efectos de chispitas cuando se hace clic */}
+      {/* Efectos de chispitas simples cuando se hace clic */}
       {clickedFlowers.length > 0 && (
         <div className="absolute inset-0 pointer-events-none">
           {clickedFlowers.map((flowerId, index) => (
@@ -208,11 +195,11 @@ const CampoStickers = ({ onFlowerClick, clickedFlowers = [] }: CampoStickersProp
                 top: `${Math.random() * 100}%`,
               }}
             >
-              {/* Chispitas doradas */}
+              {/* Chispitas usando símbolos simples */}
               <div className="flex space-x-2">
-                <span className="text-yellow-400 text-2xl sparkle-animation">✨</span>
-                <span className="text-yellow-300 text-xl sparkle-animation" style={{ animationDelay: '0.2s' }}>⭐</span>
-                <span className="text-yellow-500 text-lg sparkle-animation" style={{ animationDelay: '0.4s' }}>✨</span>
+                <span className="text-yellow-400 text-2xl sparkle-animation font-bold">*</span>
+                <span className="text-yellow-300 text-xl sparkle-animation font-bold" style={{ animationDelay: '0.2s' }}>+</span>
+                <span className="text-yellow-500 text-lg sparkle-animation font-bold" style={{ animationDelay: '0.4s' }}>*</span>
               </div>
             </div>
           ))}

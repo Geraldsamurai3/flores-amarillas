@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import CampoStickers from "@/components/campo-stickers-fixed"
+import CampoStickers from "@/components/campo-stickers"
 import { FlowerMessage } from "@/components/flower-message"
 
 export default function FloresAmarillasPage() {
